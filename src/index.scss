@@ -60,6 +60,7 @@ header {
   display: flex;
   justify-content: space-between;
   &-price {
+    cursor: pointer;
     margin-right: 30px;
     img {
       margin-right: 15px;
@@ -84,15 +85,19 @@ header {
   margin-left: 20px;
   margin-bottom: 30px;
   width: 210px;
-  padding: 30px;
+  padding: 28px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
   &:hover {
     box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.07);
     transform: translateY(-5px);
   }
+  &-img{
+    margin-bottom: 14px;
+  }
   h5 {
     font-weight: 400;
     font-size: 14px;
+    line-height: 17px;
     margin-bottom: 14px;
   }
 }
@@ -112,12 +117,7 @@ header {
     font-size: 14px;
     line-height: 17px;
   }
-  .button {
-    width: 32px;
-    height: 32px;
-    background: #ffffff;
-    border: 1px solid #f2f2f2;
-    border-radius: 8px;
+  img {
     cursor: pointer;
   }
 }
@@ -144,8 +144,7 @@ header {
 }
 
 .overlay {
-  display: none;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -168,11 +167,11 @@ header {
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
-    img{
+    img {
       cursor: pointer;
       transition: opacity 0.2s ease-in-out;
       opacity: 0.7;
-      &:hover{
+      &:hover {
         opacity: 1;
       }
     }
@@ -211,9 +210,9 @@ header {
     cursor: pointer;
     transition: opacity 0.2s ease-in-out;
     opacity: 0.7;
-      &:hover{
-        opacity: 1;
-      }
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 .greenButton {
@@ -263,12 +262,12 @@ header {
   }
   button {
     position: relative;
-    &:hover{
-      img{
+    &:hover {
+      img {
         transform: translateX(5px);
       }
     }
-    img{
+    img {
       position: absolute;
       top: 20px;
       right: 40px;

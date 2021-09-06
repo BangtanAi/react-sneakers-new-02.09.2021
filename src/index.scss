@@ -59,6 +59,10 @@ header {
 .headerRight {
   display: flex;
   justify-content: space-between;
+  &-heart{
+    margin-right: 20px;
+    cursor: pointer;
+  }
   &-price {
     cursor: pointer;
     margin-right: 30px;
@@ -91,7 +95,7 @@ header {
     box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.07);
     transform: translateY(-5px);
   }
-  &-img{
+  &-img {
     margin-bottom: 14px;
   }
   h5 {
@@ -131,6 +135,7 @@ header {
   padding: 0 15px;
   border: 1px solid #f3f3f3;
   border-radius: 10px;
+  position: relative;
   input {
     border: 0;
     padding: 13px;
@@ -179,7 +184,6 @@ header {
 }
 .items {
   flex: 1;
-  overflow: auto;
   margin-bottom: 30px;
 }
 .cartItem {
@@ -188,7 +192,7 @@ header {
   border: 1px solid #f3f3f3;
   padding: 20px 20px 29px 20px;
   border-radius: 20px;
-  overflow: hidden;
+  // overflow: hidden;
   margin-bottom: 20px;
   &-img {
     margin-right: 20px;
@@ -206,13 +210,20 @@ header {
   div {
     margin-right: 20px;
   }
-  .remove-btn {
-    cursor: pointer;
-    transition: opacity 0.2s ease-in-out;
-    opacity: 0.7;
-    &:hover {
-      opacity: 1;
-    }
+}
+.remove-btn {
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+  &.input-remove {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    top: 12px;
+    right: 12px;
   }
 }
 .greenButton {
@@ -220,7 +231,7 @@ header {
   background: #9dd558;
   border-radius: 18px;
   color: #fff;
-  width: 100%;
+  width: 90%;
   padding-top: 18px;
   padding-bottom: 18px;
   border: none;
@@ -228,6 +239,18 @@ header {
   font-size: 16px;
   line-height: 19px;
   transition: background 0.2s ease-in-out;
+  position: relative;
+  &:hover {
+    img {
+      transform: translateX(-5px);
+    }
+  }
+  img {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    transition: transform 0.2s ease-in-out;
+  }
   &:hover {
     background: lighten($color: #9dd558, $amount: 5%);
   }
@@ -274,4 +297,28 @@ header {
       transition: transform 0.2s ease-in-out;
     }
   }
+}
+
+.cart-empty {
+  text-align: center;
+  margin-top: 200px;
+  &__img {
+    margin-bottom: 20px;
+  }
+  h4 {
+    margin-bottom: 9px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+  }
+  p {
+    margin-bottom: 40px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 0.4;
+  }
+}
+.cart-filled{
+  overflow: auto;
 }

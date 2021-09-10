@@ -31,6 +31,7 @@ function Drawer({ onClose, items = [], onRemove }) {
     }
     setIsLoading(false);
   }
+  const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
  
   return (
     <div className="overlay">
@@ -64,12 +65,12 @@ function Drawer({ onClose, items = [], onRemove }) {
                 <li>
                   <span>Итого: </span>
                   <div></div>
-                  <b>21 498 руб. </b>
+                  <b>{totalPrice} руб. </b>
                 </li>
                 <li>
                   <span>Налог 5%: </span>
                   <div></div>
-                  <b>1074 руб. </b>
+                  <b>{(totalPrice/100) * 5} руб. </b>
                 </li>
               </ul>
               <button onClick={onClickOrder} disabled={isLoading} className="greenButton">

@@ -21,7 +21,7 @@ function Home({
           <Card
             {...item}
             key={index}
-            onPlus={(obj) => onAddToCart(item)}
+            onPlus={(obj) => onAddToCart(obj)}
             onAddFavorites={(obj) => onAddToFavorites(item)}
             added={cartItems.some((obj) => Number(obj.id) === Number(item.id))}
             loading={isLoading}

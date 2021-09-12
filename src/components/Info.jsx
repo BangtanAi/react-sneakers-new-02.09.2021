@@ -15,7 +15,7 @@ function Info({ image, title, description }) {
             <h4>{title}</h4>
             <p>{description}</p>
             <button onClick={()=> setCartOpened(false)} className="greenButton">
-              <img src="/img/cart-empty.svg" alt="Arrow" /> Вернуться назад
+              <img src="img/cart-empty.svg" alt="Arrow" /> Вернуться назад
             </button>
           </div>
     )
